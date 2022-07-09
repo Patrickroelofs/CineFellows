@@ -1,0 +1,21 @@
+{
+  "name": "CineFellows",
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "description": "Browser Extension that shows IMDB and Rotten Tomatoes score on different streaming services.",
+  "action": {
+    "default_title": "CineFellows - IMDB and Rotten Tomatoes scores",
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": [],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+			"matches": ["https://*/*"],
+      "js": ["foreground.js"]
+    }
+  ],
+  "host_permissions": ["*://*/*"]
+}
