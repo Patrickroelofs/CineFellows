@@ -13,9 +13,13 @@
   },
   "content_scripts": [
     {
-			"matches": ["https://*.netflix.com/*"],
+      "matches": ["https://*.netflix.com/*"],
       "js": ["foreground.js"],
-			"run_at": "document_start"
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://*.netflix.com/*"],
+      "js": ["./services/netflix/Netflix.js"]
     }
   ],
   "host_permissions": ["*://*/*"]
