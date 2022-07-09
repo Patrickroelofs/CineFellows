@@ -1,1 +1,1 @@
-console.log("External file is also loaded!")
+console.log("Foreground working...");
