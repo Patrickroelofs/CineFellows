@@ -3,7 +3,7 @@ const observeBody = new MutationObserver(function (mutations, observer) {
   let isDetailedPage = checkIfDetailedPage();
 
 	if(isDetailedPage) {
-		let detailedPage = parseDetailedPage(isDetailedPage);
+		let detailedPage = parseDetailedPage();
 
 		console.log(detailedPage);
 	}
@@ -15,9 +15,10 @@ function checkIfDetailedPage() {
   return matched !== null ? matched[1] : false;
 }
 
-function parseDetailedPage(movieId) {
+function parseDetailedPage() {
 	let titleEle = document.querySelector("img.previewModal--player-titleTreatment-logo");
 	let title = titleEle.getAttribute("alt").trim();
+
 	return {
 		title: title,
 	}
