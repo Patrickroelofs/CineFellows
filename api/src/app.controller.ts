@@ -1,12 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+@Controller('netflix')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  testIMDBRequest(): any {
-    return this.appService.testIMDBRequest();
+  @Get('movie/:netflixName')
+  testIMDBRequest(@Param() params): any {
+    return this.appService.testIMDBRequest(params.netflixName);
   }
 }
