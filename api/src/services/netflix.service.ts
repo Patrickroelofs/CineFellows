@@ -6,7 +6,7 @@ import { Netflix, Prisma } from '@prisma/client';
 export class NetflixService {
   constructor(private prisma: PrismaService) {}
 
-  async netflix(
+  async uniqueNetflix(
     netflixWhereUniqueInput: Prisma.NetflixWhereUniqueInput,
   ): Promise<Netflix | null> {
     return this.prisma.netflix.findUnique({
@@ -14,7 +14,7 @@ export class NetflixService {
     });
   }
 
-  async netflixs(params: {
+  async allNetflix(params: {
     skip?: number;
     take?: number;
     cursor?: Prisma.NetflixWhereUniqueInput;
@@ -53,4 +53,6 @@ export class NetflixService {
       where,
     });
   }
+
+  // TODO: Add upsert support & implement.
 }

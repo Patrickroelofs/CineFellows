@@ -8,9 +8,9 @@ datasource db {
 }
 
 model Netflix {
-  id Int @default(autoincrement()) @id
-  netflixName String
-  imdbId String
+  id Int @default(autoincrement()) @id @unique
+  netflixName String @unique
+  imdbId String @unique
   imdbRating String
   imdbVotes String
   metaScore String
