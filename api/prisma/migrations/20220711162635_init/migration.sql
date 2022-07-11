@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE "Netflix" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "netflixName" TEXT NOT NULL,
+    "imdbId" TEXT NOT NULL,
+    "imdbRating" TEXT NOT NULL,
+    "imdbVotes" TEXT NOT NULL,
+    "metaScore" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
