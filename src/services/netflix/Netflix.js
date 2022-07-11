@@ -1,11 +1,16 @@
+let data;
+
 // List of functions to run while observing the page
 const observeBody = new MutationObserver(function (mutations, observer) {
   let isDetailedPage = checkIfDetailedPage();
 
 	if(isDetailedPage) {
+
 		let detailedPage = parseDetailedPage();
 
-		console.log(detailedPage);
+    if(!data) {
+      data = fetchData(detailedPage);
+    }
 	}
 });
 
@@ -22,6 +27,15 @@ function parseDetailedPage() {
 	return {
 		title: title,
 	}
+}
+
+async function fetchData(detailedPage) {
+  const URL = "http://localhost:3000/netflix/" + detailedPage.title;
+
+  const response = await fetch(URL, { mode: "cors" });
+  const parsedJSON = await response.json();
+
+  return parsedJSON;
 }
 
 // Start observing Netflix body content.

@@ -22,5 +22,5 @@
       "js": ["./services/netflix/Netflix.js"]
     }
   ],
-  "host_permissions": ["*://*/*"]
+  "host_permissions": ["localhost:3000/*"]
 }
